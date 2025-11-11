@@ -1,0 +1,28 @@
+
+[package]
+name = "my-bdd-broker"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[lib]
+name = "my_bdd"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1.81"
+thiserror = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "time"] }
+zmq = "0.10"
+prost = "0.13"
+prost-types = "0.13"
+prost-reflect = { version = "0.14", features = ["text-format"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+cucumber = "0.20"
+base64 = "0.21"
+
+[build-dependencies]
+prost-build = "0.14.1"
+walkdir = "2"
